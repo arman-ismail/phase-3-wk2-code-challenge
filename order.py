@@ -1,6 +1,6 @@
-from coffee import Coffee
-from customer import Customer
 
+from customer import Customer
+from coffee import Coffee
 
 class Order:
     all_coffees = []
@@ -41,4 +41,9 @@ class Order:
     def price(self, value):
         if not isinstance(value, float) or value < 1.0 or value > 10.0:
             raise TypeError("price must be a float between 1.0 and 10.0")
-        self._price = value
+        self._price = value 
+
+cust_1 = Customer("Ali")
+coffee_1 = Coffee("latte")
+order_1 = Order(cust_1,coffee_1,3.0)
+print(order_1.coffee.name)
